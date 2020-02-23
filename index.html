@@ -4,9 +4,27 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
-    <link rel="stylesheet" type="text/css" href="./css/index.min.css" />
-
     <title>Website</title>
+
+    <meta name="Description" content="description" />
+
+    <!-- Open Graph Metadata -->
+    <meta property="og:title" content="Website" />
+    <meta property="og:description" content="Website description" />
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content="https://www.ws-nico-johnny.de/" />
+    <meta
+      property="og:image"
+      content="http://www.ws-nico-johnny.de/title-image.png"
+    />
+    <meta
+      property="og:image:secure_url"
+      content="https://www.ws-nico-johnny.de/title-image.png"
+    />
+    <meta property="og:image:type" content="image/png" />
+    <!-- minimum: 1200 x 630 - 1.91:1 -->
+    <meta property="og:image:width" content="400" />
+    <meta property="og:image:height" content="300" />
   </head>
   <body>
     <header>
@@ -16,6 +34,8 @@
     <nav>
       <a href="#about">about</a>
       <a href="#work">work</a>
+      <a href="#services">servies</a>
+      <a href="#awards">awards</a>
       <a href="#contact">contact</a>
     </nav>
 
@@ -23,7 +43,11 @@
       <h2>about</h2>
 
       <div class="card card-rtl">
-        <img class="card__image" src="https://picsum.photos/360/200" />
+        <img
+          class="card__image"
+          src="https://picsum.photos/360/200"
+          alt="nico sanft, audiovisual media designer"
+        />
         <div class="card__text">
           <h3 class="card__title">nico sanft</h3>
           <p class="card__subtitle">audiovisual media designer</p>
@@ -33,8 +57,12 @@
         </div>
       </div>
 
-      <div class="card card-ltr">
-        <img class="card__image" src="https://picsum.photos/360/200" />
+      <div class="card card-rtl">
+        <img
+          class="card__image"
+          src="https://picsum.photos/360/200"
+          alt="jonathan steil, audiovisual media designer"
+        />
         <div class="card__text">
           <h3 class="card__title">jonathan steil</h3>
           <p class="card__subtitle">audiovisual media designer</p>
@@ -48,8 +76,12 @@
     <section class="main-section" id="work">
       <h2>work</h2>
 
-      <a class="card" href="https://www.google.de/">
-        <img class="card__image" src="https://picsum.photos/id/404/360/200" />
+      <a class="card" href="https://www.google.de/" ref="noopener noreferrer">
+        <img
+          class="card__image"
+          src="https://picsum.photos/id/404/360/200"
+          alt="project x"
+        />
         <div class="card__text">
           <h3 class="card__title">project x</h3>
           <p class="card__subtitle">april 2019</p>
@@ -60,8 +92,16 @@
         </div>
       </a>
 
-      <a class="card card-ltr" href="https://www.google.de/">
-        <img class="card__image" src="https://picsum.photos/id/252/360/200" />
+      <a
+        class="card card-ltr"
+        href="https://www.google.de/"
+        ref="noopener noreferrer"
+      >
+        <img
+          class="card__image"
+          src="https://picsum.photos/id/252/360/200"
+          alt="project y"
+        />
         <div class="card__text">
           <h3 class="card__title">project y</h3>
           <p class="card__subtitle">april 2019</p>
@@ -72,8 +112,16 @@
         </div>
       </a>
 
-      <a class="card card-rtl" href="https://www.google.de/">
-        <img class="card__image" src="https://picsum.photos/id/490/360/200" />
+      <a
+        class="card card-rtl"
+        href="https://www.google.de/"
+        ref="noopener noreferrer"
+      >
+        <img
+          class="card__image"
+          src="https://picsum.photos/id/490/360/200"
+          alt="project z"
+        />
         <div class="card__text">
           <h3 class="card__title">project z</h3>
           <p class="card__subtitle">april 2019</p>
@@ -85,8 +133,29 @@
       </a>
     </section>
 
+    <section class="main-section" id="services">
+      <h2>services</h2>
+      <!-- put services here -->
+    </section>
+
+    <section class="main-section" id="awards">
+      <h2>awards</h2>
+      <!-- put award logos here -->
+    </section>
+
     <section class="main-section" id="contact">
       <h2>contact</h2>
+      <p>contact us via these platforms</p>
+      <!-- put logos here -->
     </section>
+
+    <footer>
+      <h2>sanft & steil</h2>
+      <p>Hamburg, Germany © 2020</p>
+      <p></p>
+      <a href="./impressum.html">impressum</a>
+    </footer>
+
+    <link rel="stylesheet" type="text/css" href="./css/index.min.css" />
   </body>
 </html>

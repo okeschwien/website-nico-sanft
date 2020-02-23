@@ -10,7 +10,7 @@ nav {
     font-size: $font-size-m;
     border-bottom: 0.0625rem solid $color-link-default;
     color: $color-link-default;
-    width: 8.125rem;
+    width: 10rem;
     box-sizing: border-box;
 
     + :not(:first-child) {
@@ -22,24 +22,17 @@ nav {
 @include media-query-tablet {
   nav {
     a {
+      width: 6rem;
       display: inline-block;
-      @include hover-clear(
-        $color-link-default,
-        $animation-time,
-        map-get($animation-directions, "top")
-      );
+      @include hover-clear($color-link-default);
 
       + :not(:first-child) {
-        margin: 0 0 0 3rem;
+        margin: 0 0 0 2rem;
       }
 
       &:hover {
         color: $color-base-light;
-        @include hover-fill(
-          $color-link-default,
-          $animation-time,
-          map-get($animation-directions, "top")
-        );
+        @include hover-fill($color-link-default);
       }
     }
   }
