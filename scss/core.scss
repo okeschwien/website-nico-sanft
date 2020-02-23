@@ -1,0 +1,13 @@
+@import "./media-queries.scss";
+@import "./animations.scss";
+@import "./fonts.scss";
+@import "./colors.scss";
+@import "./header.scss";
+@import "./navigation.scss";
+
+body {
+  background-color: $color-base-light;
+  margin: 0;
+  -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+  -webkit-tap-highlight-color: transparent;
+}

@@ -1,0 +1,17 @@
+.main-section {
+  margin-bottom: 5rem;
+
+  h2 {
+    font-size: $font-size-xl;
+    line-height: $font-size-xl;
+    color: $color-base;
+  }
+}
+
+@include media-query-tablet {
+  .main-section {
+    h2 {
+      text-align: start;
+    }
+  }
+}

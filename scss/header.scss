@@ -1,0 +1,16 @@
+header {
+  h1 {
+    color: $color-base;
+    font-size: $font-size-xxl;
+    line-height: $font-size-xxl;
+  }
+}
+
+@include media-query-tablet {
+  header {
+    h1 {
+      font-size: $font-size-xxxl;
+      line-height: $font-size-xxxl;
+    }
+  }
+}

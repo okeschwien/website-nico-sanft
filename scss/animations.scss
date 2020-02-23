@@ -1,0 +1,49 @@
+$animation-time: 200ms;
+$animation-directions: (
+  "top": top,
+  "left": left
+);
+
+@mixin hover-clear($fill-color, $time, $direction, $setSize: true) {
+  @if $setSize {
+    background-size: 200% 200%;
+  }
+
+  background-image: linear-gradient(
+    to $direction,
+    $fill-color 50%,
+    transparent 50%
+  );
+  -webkit-transition: background-position $time, color $time ease;
+  -moz-transition: background-position $time, color $time ease;
+  -ms-transition: background-position $time, color $time ease;
+  -o-transition: background-position $time, color $time ease;
+  transition: background-position $time, color $time ease;
+}
+
+@mixin hover-fill($fill-color, $time, $direction) {
+  @if $direction == top {
+    background-position: bottom;
+  } @else if $direction == left {
+    background-position: right;
+  }
+  @include hover-clear($fill-color, $time, $direction, false);
+}
+
+@mixin zoom($value: 1) {
+  -moz-transform: scale($value);
+  -ms-transform: scale($value);
+  -o-transform: scale($value);
+  -webkit-transform: scale($value);
+  transform: scale($value);
+  // -webkit-transition: background-position $time, color $time ease,
+  //   border-color $time ease;
+  // -moz-transition: background-position $time, color $time ease,
+  //   border-color $time ease;
+  // -ms-transition: background-position $time, color $time ease,
+  //   border-color $time ease;
+  // -o-transition: background-position $time, color $time ease,
+  //   border-color $time ease;
+  // transition: background-position $time, color $time ease,
+  //   border-color $time ease;
+}
