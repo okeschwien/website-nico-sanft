@@ -1,0 +1,28 @@
+footer {
+  text-align: center;
+  padding: 2rem 0;
+  border-top: 0.0625rem solid $color-base;
+  color: $color-base;
+
+  h2 {
+    margin: 0 0 2rem 0;
+  }
+
+  p,
+  a {
+    font-size: $font-size-m;
+  }
+
+  /* TODO so wie navigation links?*/
+  a {
+    text-decoration: none;
+    color: $color-base;
+    padding: 1rem;
+  }
+}
+
+@include media-query-tablet {
+  footer {
+    padding: 4rem 0;
+  }
+}
