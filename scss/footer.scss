@@ -2,19 +2,51 @@ footer {
   text-align: center;
   padding: 1rem 0;
   color: $color-base;
+  font-size: $font-size-m;
 
-  p {
-    font-size: $font-size-m;
+  .footer__links {
+    font-size: $font-size-l;
+
+    a {
+      text-decoration: none;
+      color: $color-base;
+      padding: 1rem;
+    }
   }
 }
 
-@include media-query-tablet {
-  footer {
-    display: flex;
+.twitter {
+  @extend %fa-icon;
+  @extend .fab;
 
-    p,
-    h2 {
-      flex: 50%;
-    }
+  &:before {
+    content: fa-content($fa-var-twitter);
+  }
+}
+
+.facebook {
+  @extend %fa-icon;
+  @extend .fab;
+
+  &:before {
+    content: fa-content($fa-var-facebook);
+  }
+}
+
+.xing {
+  @extend %fa-icon;
+  @extend .fab;
+
+  &:before {
+    content: fa-content($fa-var-xing);
+  }
+}
+
+.instagram {
+  @extend %fa-icon;
+  @extend .fab;
+
+  &:before {
+    content: fa-content($fa-var-instagram);
   }
 }
