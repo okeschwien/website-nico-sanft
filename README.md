@@ -1,6 +1,20 @@
-# Website
+# README sanft & steil
 
-## SASS/SCSS
+## SASS/SCSS + PurgeCSS
+
+### Install SASS
+
+```
+brew install sass/sass/sass
+```
+
+### Install PurgeCSS
+
+```
+npm i -g purgecss
+```
+
+### Usage
 
 Watch and compile all SASS/SCSS styles into a minified CSS file:
 
