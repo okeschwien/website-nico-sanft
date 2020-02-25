@@ -1,57 +1,17 @@
 $animation-time: 200ms;
 
-$animation-fade-default: 1;
-$animation-fade-hovered: 0.8;
-
 $animation-scale-default: 1;
 $animation-scale-hovered: 1.03;
 
-$animation-shadow-default: 0 4px 8px 0 rgba(0, 0, 0, 0.2),
-  0 6px 20px 0 rgba(0, 0, 0, 0.19);
-$animation-shadow-hovered: 0 8px 16px 0 rgba(0, 0, 0, 0.2),
-  0 12px 40px 0 rgba(0, 0, 0, 0.19);
-
-@mixin hover-clear($fill-color, $time: $animation-time, $setSize: true) {
-  @if $setSize {
-    background-size: 200% 200%;
-  }
-
-  background-image: linear-gradient(to top, $fill-color 50%, transparent 50%);
-  -webkit-transition: background-position $time, color $time ease;
-  -moz-transition: background-position $time, color $time ease;
-  -ms-transition: background-position $time, color $time ease;
-  -o-transition: background-position $time, color $time ease;
-  transition: background-position $time, color $time ease;
-}
-
-@mixin hover-fill($fill-color, $time: $animation-time) {
-  background-position: bottom;
-  @include hover-clear($fill-color, $time, false);
-}
-
-@mixin fade($value: $animation-fade-default, $time: $animation-time) {
-  opacity: $value;
-  -webkit-transition: opacity $time ease;
-  -moz-transition: opacity $time ease;
-  -ms-transition: opacity $time ease;
-  -o-transition: opacity $time ease;
-  transition: opacity $time ease;
-}
-
-@mixin hightlight(
-  $scale-value: $animation-scale-default,
-  $shadow-value: $animation-shadow-default,
-  $time: $animation-time
-) {
-  -webkit-transform: scale($scale-value);
-  -moz-transform: scale($scale-value);
-  -ms-transform: scale($scale-value);
-  -o-transform: scale($scale-value);
-  transform: scale($scale-value);
-  box-shadow: $shadow-value;
-  -webkit-transition: box-shadow $time ease, transform $time ease;
-  -moz-transition: box-shadow $time ease, transform $time ease;
-  -ms-transition: box-shadow $time ease, transform $time ease;
-  -o-transition: box-shadow $time ease, transform $time ease;
-  transition: box-shadow $time ease, transform $time ease;
-}
+// @mixin scale($scale-value: $animation-scale-default, $time: $animation-time) {
+//   -webkit-transform: scale($scale-value);
+//   -moz-transform: scale($scale-value);
+//   -ms-transform: scale($scale-value);
+//   -o-transform: scale($scale-value);
+//   transform: scale($scale-value);
+//   -webkit-transition: transform $time ease;
+//   -moz-transition: transform $time ease;
+//   -ms-transition: transform $time ease;
+//   -o-transition: transform $time ease;
+//   transition: transform $time ease;
+// }

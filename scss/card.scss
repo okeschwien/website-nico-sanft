@@ -1,136 +1,22 @@
-$card-height: 15.625rem;
-$card-height-description: 7.875rem;
+$card-max-height: 18.75rem;
 
-@mixin card-base($animation: false) {
-  text-decoration: none;
-  color: $color-base;
+.content-group__card {
+  width: 100%;
 
-  + :not(:first-child) {
-    margin-top: 4em;
-  }
-
-  @if $animation {
-    &:hover {
-      .card__image {
-        @include hightlight(
-          $animation-scale-hovered,
-          $animation-shadow-hovered
-        );
-      }
-    }
-  }
-
-  .card__image {
+  img {
     width: 100%;
-    height: $card-height;
+    max-height: $card-max-height;
     object-fit: cover;
     display: block;
-    @include hightlight;
-  }
-
-  .card__text {
-    box-sizing: border-box;
-
-    .card__title {
-      font-size: $font-size-l;
-      line-height: $font-size-l;
-      margin: 0;
-      padding: 1rem 1rem;
-    }
-
-    .card__subtitle {
-      margin: 0;
-      padding: 1rem 1rem 0 1rem;
-    }
-
-    .card__description {
-      letter-spacing: $font-letter-spacing-s;
-      line-height: 2rem;
-      padding: 1rem;
-      margin: 0;
-      hyphens: auto;
-      word-break: normal;
-    }
   }
 }
 
-@mixin card-with-direction(
-  $direction: vertical,
-  $alignment: default,
-  $text-alignment-start: false
-) {
-  @if $direction == horizontal {
-    display: flex;
-    @if $alignment == ltr {
-      flex-direction: row-reverse;
+@include media-query-desktop {
+  .content-group__card {
+    // @include scale;
+
+    &:hover {
+      // @include scale($animation-scale-hovered);
     }
-  } @else {
-    display: block;
-  }
-
-  .card__image {
-    @if $direction == horizontal {
-      flex-basis: 60%;
-    }
-  }
-
-  .card__text {
-    @if $direction == horizontal {
-      flex-basis: 40%;
-      height: $card-height;
-    }
-
-    .card__title {
-      @if $direction == horizontal or $text-alignment-start {
-        text-align: start;
-      }
-    }
-
-    .card__subtitle {
-      @if $direction == horizontal or $text-alignment-start {
-        text-align: start;
-      } @else {
-        text-align: center;
-      }
-    }
-
-    .card__description {
-      @if $direction == horizontal {
-        height: $card-height-description;
-      }
-    }
-  }
-}
-
-@mixin card-vertical($text-alignment-start: false, $animation: false) {
-  @include card-base($animation);
-  @include card-with-direction(vertical, default, $text-alignment-start);
-}
-
-@mixin card-horizontal-ltr() {
-  @include card-base;
-  @include card-with-direction(horizontal, ltr);
-}
-
-@mixin card-horizontal-rtl() {
-  @include card-base;
-  @include card-with-direction(horizontal, rtl);
-}
-
-.card {
-  @include card-vertical;
-}
-
-@include media-query-tablet {
-  .card {
-    @include card-vertical(true, true);
-  }
-
-  .card-rtl {
-    @include card-horizontal-rtl;
-  }
-
-  .card-ltr {
-    @include card-horizontal-ltr;
   }
 }

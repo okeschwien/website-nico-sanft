@@ -1,39 +1,29 @@
 nav {
-  padding: 1rem 0 2rem 0;
   text-align: center;
+  display: flex;
+  max-width: 16.25rem;
 
   a {
+    flex: 50%;
     margin: 0 auto;
     display: block;
     text-decoration: none;
     padding: 1rem;
     font-size: $font-size-m;
-    border-bottom: 0.0625rem solid $color-link-default;
     color: $color-link-default;
-    width: 10rem;
-    box-sizing: border-box;
 
-    + :not(:first-child) {
-      margin-top: 1rem;
+    &.navigation__entry_active {
+      border-bottom: 0.0625rem solid $color-base;
     }
   }
 }
 
 @include media-query-tablet {
   nav {
+    padding-top: 0.625rem;
+
     a {
-      width: 6rem;
       display: inline-block;
-      @include hover-clear($color-link-default);
-
-      + :not(:first-child) {
-        margin: 0 0 0 2rem;
-      }
-
-      &:hover {
-        color: $color-base-light;
-        @include hover-fill($color-link-default);
-      }
     }
   }
 }

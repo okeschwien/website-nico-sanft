@@ -1,4 +1,6 @@
 $breakpoint-tablet: 48rem;
+$breakpoint-desktop: 72rem;
+$content-width-max: 96rem;
 
 @mixin media-query-tablet {
   @media (min-width: $breakpoint-tablet) {
@@ -6,12 +8,23 @@ $breakpoint-tablet: 48rem;
   }
 }
 
+@mixin media-query-desktop {
+  @media (min-width: $breakpoint-desktop) {
+    @content;
+  }
+}
+
 @include media-query-tablet {
   footer,
-  header,
   nav,
-  .main-section {
+  section {
     max-width: $breakpoint-tablet;
+    margin: 0 auto;
+  }
+
+  header,
+  .content-group {
+    max-width: $content-width-max;
     margin: 0 auto;
   }
 }
