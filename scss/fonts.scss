@@ -5,6 +5,7 @@ $font-weight-l: 500;
 $font-weight-xl: 600;
 $font-weight-xxl: 900;
 
+$font-size-s: 0.8125rem;
 $font-size-m: 1rem;
 $font-size-l: 1.5rem;
 $font-size-xl: 2.5rem;
@@ -50,7 +51,8 @@ h1,
 h2,
 h3,
 h4 {
-  margin: 2rem 0 2rem 0;
+  margin: 0;
+  padding: 1rem;
   text-align: center;
 }
 

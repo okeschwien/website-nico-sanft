@@ -1,9 +1,11 @@
+@import "./font-awesome/fontawesome.scss";
+@import "./font-awesome/brands.scss";
 @import "./media-queries.scss";
 @import "./animations.scss";
 @import "./fonts.scss";
 @import "./colors.scss";
 @import "./header.scss";
-@import "./navigation.scss";
+@import "./footer.scss";
 
 body {
   background-color: $color-base-light;
