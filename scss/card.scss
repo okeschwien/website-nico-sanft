@@ -1,22 +1,10 @@
-$card-max-height: 18.75rem;
-
-.content-group__card {
+.card {
   width: 100%;
 
   img {
     width: 100%;
-    max-height: $card-max-height;
+    height: 100%;
     object-fit: cover;
     display: block;
-  }
-}
-
-@include media-query-desktop {
-  .content-group__card {
-    // @include scale;
-
-    &:hover {
-      // @include scale($animation-scale-hovered);
-    }
   }
 }
