@@ -70,4 +70,19 @@ h3 {
 
 p {
   font-weight: $font-weight-m;
+  padding: 1rem;
+  margin: 0;
+}
+
+html {
+  text-transform: lowercase;
+}
+
+@include media-query-tablet {
+  h1,
+  h2,
+  h3,
+  h4 {
+    text-align: left;
+  }
 }
