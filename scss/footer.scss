@@ -15,6 +15,14 @@ footer {
   }
 }
 
+@include media-query-tablet {
+  footer {
+    h2 {
+      text-align: center;
+    }
+  }
+}
+
 .twitter {
   @extend %fa-icon;
   @extend .fab;
