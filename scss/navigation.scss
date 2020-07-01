@@ -4,23 +4,18 @@ nav {
   max-width: 16.25rem;
 
   a {
-    flex: 50%;
     margin: 0 auto;
     display: block;
     text-decoration: none;
     padding: 1rem;
     font-size: $font-size-m;
     color: $color-link-default;
-
-    &.navigation__entry_active {
-      border-bottom: 0.0625rem solid $color-base;
-    }
   }
 }
 
 @include media-query-tablet {
   nav {
-    padding-top: 0.625rem;
+    padding-top: 1.5rem;
 
     a {
       display: inline-block;
