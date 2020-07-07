@@ -1,4 +1,4 @@
-$fade-transition-opacity: 1s cubic-bezier(0.075, 0.82, 0.165, 0.86);
+$transition-fade: 1s cubic-bezier(0.075, 0.82, 0.165, 0.86);
 
 .card {
   width: 100%;
@@ -20,7 +20,7 @@ $fade-transition-opacity: 1s cubic-bezier(0.075, 0.82, 0.165, 0.86);
     height: 100%;
     object-fit: cover;
     display: block;
-    transition: $fade-transition-opacity;
+    transition: $transition-fade;
   }
 
   .overlay {
@@ -32,7 +32,7 @@ $fade-transition-opacity: 1s cubic-bezier(0.075, 0.82, 0.165, 0.86);
     left: 0;
     right: 0;
     bottom: 0;
-    transition: $fade-transition-opacity;
+    transition: $transition-fade;
   }
 
   h2 {
