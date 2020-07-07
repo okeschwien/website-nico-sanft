@@ -1,0 +1,16 @@
+.card-group {
+}
+
+@include media-query-tablet {
+  .card-group {
+    display: flex;
+    align-content: flex-start;
+    flex-wrap: wrap;
+    flex-direction: row;
+  }
+}
+
+@include media-query-desktop {
+  .card-group {
+  }
+}

@@ -1,26 +1,19 @@
 $transition-fade: 1s cubic-bezier(0.075, 0.82, 0.165, 0.86);
 
 .card {
-  width: 100%;
   position: relative;
 
-  &:hover {
-    img {
-      opacity: 0.6;
-      filter: blur(1px);
-    }
-
-    .overlay {
-      opacity: 1;
-    }
-  }
-
   img {
+    max-width: 500px;
+    max-height: 216px;
     width: 100%;
     height: 100%;
     object-fit: cover;
     display: block;
     transition: $transition-fade;
+    width: auto;
+    height: auto;
+    min-width: 360px;
   }
 
   .overlay {
@@ -53,5 +46,22 @@ $transition-fade: 1s cubic-bezier(0.075, 0.82, 0.165, 0.86);
     transform: translate(-50%);
     -ms-transform: translate(-50%);
     padding: 0;
+  }
+}
+
+@include media-query-tablet {
+  .card {
+    padding: 4px;
+
+    &:hover {
+      img {
+        opacity: 0.6;
+        filter: blur(1px);
+      }
+
+      .overlay {
+        opacity: 1;
+      }
+    }
   }
 }

@@ -17,14 +17,14 @@ $content-width-max: 96rem;
 @include media-query-tablet {
   footer,
   nav {
-    max-width: $breakpoint-tablet;
+    width: $breakpoint-tablet;
     margin: 0 auto;
   }
 
   header,
   .content-group,
   section {
-    max-width: $content-width-max;
+    width: $content-width-max;
     margin: 0 auto;
   }
 }
