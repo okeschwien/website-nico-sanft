@@ -1,22 +1,57 @@
-$card-max-height: 18.75rem;
+$transition-fade: 1s cubic-bezier(0.075, 0.82, 0.165, 0.86);
 
-.content-group__card {
+.card {
   width: 100%;
+  position: relative;
+
+  &:hover {
+    img {
+      opacity: 0.6;
+      filter: blur(1px);
+    }
+
+    .overlay {
+      opacity: 1;
+    }
+  }
 
   img {
     width: 100%;
-    max-height: $card-max-height;
+    height: 100%;
     object-fit: cover;
     display: block;
+    transition: $transition-fade;
   }
-}
 
-@include media-query-desktop {
-  .content-group__card {
-    // @include scale;
+  .overlay {
+    position: absolute;
+    opacity: 0;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    transition: $transition-fade;
+  }
 
-    &:hover {
-      // @include scale($animation-scale-hovered);
-    }
+  h2 {
+    position: absolute;
+    left: 50%;
+    top: calc(50% - 1.5rem);
+    color: $color-base;
+    transform: translate(-50%);
+    -ms-transform: translate(-50%);
+    padding: 0;
+  }
+
+  p {
+    position: absolute;
+    left: 50%;
+    top: calc(50% + 0.5rem);
+    color: $color-base;
+    transform: translate(-50%);
+    -ms-transform: translate(-50%);
+    padding: 0;
   }
 }

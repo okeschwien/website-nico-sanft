@@ -1,6 +1,6 @@
 footer {
   text-align: center;
-  padding: 1rem 0;
+  padding: 2rem 0;
   color: $color-base;
   font-size: $font-size-m;
 
@@ -15,30 +15,11 @@ footer {
   }
 }
 
-.twitter {
-  @extend %fa-icon;
-  @extend .fab;
-
-  &:before {
-    content: fa-content($fa-var-twitter);
-  }
-}
-
-.facebook {
-  @extend %fa-icon;
-  @extend .fab;
-
-  &:before {
-    content: fa-content($fa-var-facebook);
-  }
-}
-
-.xing {
-  @extend %fa-icon;
-  @extend .fab;
-
-  &:before {
-    content: fa-content($fa-var-xing);
+@include media-query-tablet {
+  footer {
+    h2 {
+      text-align: center;
+    }
   }
 }
 
@@ -48,5 +29,23 @@ footer {
 
   &:before {
     content: fa-content($fa-var-instagram);
+  }
+}
+
+.vimeo {
+  @extend %fa-icon;
+  @extend .fab;
+
+  &:before {
+    content: fa-content($fa-var-vimeo-v);
+  }
+}
+
+.mail {
+  @extend %fa-icon;
+  @extend .far;
+
+  &:before {
+    content: fa-content($fa-var-envelope);
   }
 }
