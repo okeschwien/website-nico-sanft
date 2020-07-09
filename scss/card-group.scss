@@ -1,8 +1,10 @@
 .card-group {
+  width: 100%;
 }
 
 @include media-query-tablet {
   .card-group {
+    max-width: $breakpoint-tablet;
     display: flex;
     align-content: flex-start;
     flex-wrap: wrap;
@@ -12,5 +14,6 @@
 
 @include media-query-desktop {
   .card-group {
+    max-width: $breakpoint-desktop;
   }
 }
