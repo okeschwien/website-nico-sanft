@@ -9,14 +9,14 @@
     <meta property="og:title" content="Website" />
     <meta property="og:description" content="Website description" />
     <meta property="og:type" content="website" />
-    <meta property="og:url" content="https://www.nicosanft.de/" />
+    <meta property="og:url" content="https://www.nicosanft.com/" />
     <meta
       property="og:image"
-      content="http://www.nicosanft.de/title-image.png"
+      content="http://www.nicosanft.com/title-image.png"
     />
     <meta
       property="og:image:secure_url"
-      content="https://www.nicosanft.de/title-image.png"
+      content="https://www.nicosanft.com/title-image.png"
     />
     <meta property="og:image:type" content="image/png" />
     <!-- minimum: 1200 x 630 - 1.91:1 -->
@@ -36,85 +36,7 @@
       </nav>
     </header>
 
-    <section class="content-group">
-      <a class="card" href="./better-times.html" ref="noopener noreferrer">
-        <img src="./assets/inspiration.jpg" alt="inspiration" />
-        <div class="overlay">
-          <h2>l'inspiration</h2>
-          <p>— view —</p>
-        </div>
-      </a>
-      <a class="card" href="./better-times.html" ref="noopener noreferrer">
-        <img src="./assets/aftermath.jpg" alt="aftermath" />
-        <div class="overlay">
-          <h2>aftermath</h2>
-          <p>— view —</p>
-        </div>
-      </a>
-      <a class="card" href="./better-times.html" ref="noopener noreferrer">
-        <img src="./assets/thespaceinbetween.jpg" alt="the space in between" />
-        <div class="overlay">
-          <h2>the space in between</h2>
-          <p>— view —</p>
-        </div>
-      </a>
-      <a class="card" href="./better-times.html" ref="noopener noreferrer">
-        <img src="./assets/iris.jpg" alt="iris" />
-        <div class="overlay">
-          <h2>iris</h2>
-          <p>— view —</p>
-        </div>
-      </a>
-      <a class="card" href="./better-times.html" ref="noopener noreferrer">
-        <img src="./assets/luna.jpg" alt="luna" />
-        <div class="overlay">
-          <h2>luna</h2>
-          <p>— view —</p>
-        </div>
-      </a>
-      <a class="card" href="./better-times.html" ref="noopener noreferrer">
-        <img src="./assets/familienbande.jpg" alt="familienbande" />
-        <div class="overlay">
-          <h2>familienbande</h2>
-          <p>— view —</p>
-        </div>
-      </a>
-      <a class="card" href="./better-times.html" ref="noopener noreferrer">
-        <img src="./assets/bettertimes.jpg" alt="bettertimes" />
-        <div class="overlay">
-          <h2>better times</h2>
-          <p>— view —</p>
-        </div>
-      </a>
-      <a class="card" href="./better-times.html" ref="noopener noreferrer">
-        <img src="./assets/sonnenflecken.jpg" alt="sonnenflecken" />
-        <div class="overlay">
-          <h2>sonnenflecken</h2>
-          <p>— view —</p>
-        </div>
-      </a>
-      <a class="card" href="./better-times.html" ref="noopener noreferrer">
-        <img src="./assets/hilfevonoben.jpg" alt="hilfe von oben" />
-        <div class="overlay">
-          <h2>hilfe von oben</h2>
-          <p>— view —</p>
-        </div>
-      </a>
-      <a class="card" href="./better-times.html" ref="noopener noreferrer">
-        <img src="./assets/kinderspiel.jpg" alt="kinderspiel" />
-        <div class="overlay">
-          <h2>kinderspiel</h2>
-          <p>— view —</p>
-        </div>
-      </a>
-      <a class="card" href="./better-times.html" ref="noopener noreferrer">
-        <img src="./assets/mybody.jpg" alt="my body" />
-        <div class="overlay">
-          <h2>my body</h2>
-          <p>— view —</p>
-        </div>
-      </a>
-    </section>
+    <section class="card-group" id="card-group-main"></section>
 
     <footer>
       <div class="footer__links">
@@ -142,5 +64,82 @@
         <p>2020 Hamburg, Germany</p>
       </div>
     </footer>
+
+    <script async>
+      const isMobile = document.body.clientWidth < 1016
+
+      const assets = [
+        { name: 'aftermath', file: 'aftermath' },
+        { name: 'better times', file: 'bettertimes' },
+        { name: 'familienbande', file: 'familienbande' },
+        { name: 'hilfe von oben', file: 'hilfevonoben' },
+        { name: "l'inspiration", file: 'inspiration' },
+        { name: 'iris', file: 'iris' },
+        { name: 'kinderspiel', file: 'kinderspiel' },
+        { name: 'luna', file: 'luna' },
+        { name: 'my body', file: 'mybody' },
+        { name: 'sonnenflecken', file: 'sonnenflecken' },
+        { name: 'the space in between', file: 'thespaceinbetween' },
+      ]
+
+      function playVideo(event) {
+        event.target.play()
+      }
+
+      function pauseVideo(event) {
+        event.target.pause()
+      }
+
+      function initializeCards() {
+        const cardGroup = document.getElementById('card-group-main')
+
+        for (let asset of assets) {
+          let item = document.createElement('a')
+          item.setAttribute('class', 'card')
+          item.setAttribute('ref', 'noopener noreferrer')
+          item.setAttribute('href', `./${asset.file}.html`)
+
+          if (isMobile) {
+            let image = document.createElement('img')
+            image.setAttribute('src', `./assets/${asset.file}.jpg`)
+            image.setAttribute('alt', `${asset.name}`)
+
+            item.append(image)
+          } else {
+            let video = document.createElement('video')
+            video.setAttribute('class', 'interact-on-hover')
+            video.setAttribute('muted', true)
+            video.setAttribute('loop', true)
+
+            video.addEventListener('mouseover', playVideo)
+            video.addEventListener('mouseout', pauseVideo)
+
+            let source = document.createElement('source')
+            source.setAttribute('src', `./assets/${asset.file}.mp4`)
+            source.setAttribute('type', 'video/mp4')
+
+            video.append(source)
+            item.append(video)
+
+            let overlay = document.createElement('div')
+            overlay.setAttribute('class', 'overlay')
+
+            let overlayTitle = document.createElement('h2')
+            overlayTitle.append(document.createTextNode(asset.name))
+            overlay.append(overlayTitle)
+
+            let cta = document.createElement('p')
+            cta.append(document.createTextNode('— view —'))
+            overlay.append(cta)
+
+            item.append(overlay)
+          }
+
+          cardGroup.append(item)
+        }
+      }
+
+      initializeCards()
+    </script>
   </body>
 </html>

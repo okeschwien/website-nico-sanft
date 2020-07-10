@@ -1,0 +1,19 @@
+.card-group {
+  width: 100%;
+}
+
+@include media-query-tablet {
+  .card-group {
+    width: $breakpoint-tablet;
+    display: flex;
+    align-content: flex-start;
+    flex-wrap: wrap;
+    flex-direction: row;
+  }
+}
+
+@include media-query-desktop {
+  .card-group {
+    width: $breakpoint-desktop;
+  }
+}
