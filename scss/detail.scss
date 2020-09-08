@@ -1,6 +1,146 @@
-@import "./core.scss";
+@import './core.scss';
 
-video {
-  width: 100%;
-  margin: 2rem 0;
+$transition-fade: 1s cubic-bezier(0.075, 0.82, 0.165, 0.86);
+
+.detail-content {
+  .detail-media {
+    iframe {
+      width: 100%;
+    }
+
+    .detail-media-stills {
+      background-color: blue;
+    }
+  }
+
+  .detail-text {
+    color: $color-base;
+  }
+}
+
+@include media-query-tablet {
+  .detail-content {
+    display: flex;
+    flex-direction: row-reverse;
+
+    .detail-media {
+      text-align: end;
+      z-index: 10;
+
+      .cinema-mode-wall {
+        position: absolute;
+        left: 0;
+        right: 0;
+        top: 0;
+        bottom: 0;
+        width: 100vw;
+        height: 100vh;
+        background-color: #000;
+        opacity: 0;
+        z-index: -1;
+        pointer-events: none;
+        transition: $transition-fade;
+      }
+
+      &:hover {
+        .cinema-mode-wall {
+          opacity: 0.8;
+        }
+      }
+
+      iframe {
+        height: 241px;
+      }
+    }
+
+    .size-movie-43 {
+      iframe {
+        width: 465px;
+        height: 364px;
+      }
+    }
+
+    .size-movie-classic {
+      iframe {
+        width: 467px;
+      }
+    }
+
+    .size-movie-modern {
+      iframe {
+        width: 492px;
+      }
+    }
+
+    .size-cinema-custom {
+      iframe {
+        width: 585px;
+      }
+    }
+
+    .size-cinema-super {
+      iframe {
+        width: 586px;
+      }
+    }
+
+    .size-cinema-wideness {
+      iframe {
+        width: 586px;
+        height: 230px;
+      }
+    }
+
+    .detail-text {
+      flex-grow: 1;
+    }
+  }
+}
+
+@include media-query-desktop {
+  .detail-content {
+    .detail-media {
+      iframe {
+        height: 387px;
+      }
+    }
+
+    .size-movie-43 {
+      iframe {
+        width: 659px;
+        height: 519px;
+      }
+    }
+
+    .size-movie-classic {
+      iframe {
+        width: 743px;
+      }
+    }
+
+    .size-movie-modern {
+      iframe {
+        width: 784px;
+      }
+    }
+
+    .size-cinema-custom {
+      iframe {
+        width: 900px;
+      }
+    }
+
+    .size-cinema-super {
+      iframe {
+        width: 933px;
+      }
+    }
+
+    .size-cinema-wideness {
+      iframe {
+        width: 976px;
+        height: 371px;
+      }
+    }
+  }
 }
