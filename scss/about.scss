@@ -1,1 +1,47 @@
-@import "./core.scss";
+@import './core.scss';
+
+.about-content {
+  color: $color-base;
+  display: flex;
+  flex-direction: column;
+
+  h2,
+  p {
+    text-align: start;
+  }
+
+  p {
+    max-width: 600px;
+  }
+
+  img {
+    width: 100%;
+    height: auto;
+  }
+}
+
+@include media-query-tablet {
+  .about-content {
+    flex-direction: row;
+    justify-content: flex-start;
+
+    img {
+      max-width: 700px;
+      padding-left: 16px;
+    }
+
+    h2,
+    p {
+      padding-left: 32px;
+    }
+  }
+}
+
+@include media-query-desktop {
+  .about-content {
+    h2,
+    p {
+      padding-left: 16px;
+    }
+  }
+}

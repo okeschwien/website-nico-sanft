@@ -50,6 +50,7 @@ $transition-fade: 1s cubic-bezier(0.075, 0.82, 0.165, 0.86);
 
       iframe {
         height: 241px;
+        padding-right: 25px;
       }
     }
 
@@ -63,6 +64,13 @@ $transition-fade: 1s cubic-bezier(0.075, 0.82, 0.165, 0.86);
     .size-movie-classic {
       iframe {
         width: 467px;
+      }
+    }
+
+    .size-movie-169 {
+      iframe {
+        width: 480px;
+        height: 270px;
       }
     }
 
@@ -115,6 +123,13 @@ $transition-fade: 1s cubic-bezier(0.075, 0.82, 0.165, 0.86);
     .size-movie-classic {
       iframe {
         width: 743px;
+      }
+    }
+
+    .size-movie-169 {
+      iframe {
+        width: 700px;
+        height: 394;
       }
     }
 
